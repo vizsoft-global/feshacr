@@ -1,0 +1,194 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "game",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "game_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "game_ID",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "game",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "game_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "game_ID",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "room",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "room_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "room_created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "notification",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "notification_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "to_userRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "notification_type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "game_history",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "user_ref",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "order",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "order_userRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "notification",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "notification_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "to_userRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "topic",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "topic_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "game_ID",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "point",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "point_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "point_ID",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "topic",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "topic_status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "game_ID",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "topic_main_id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "phone_number",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "is_phone_verification",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "uid",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "fcm_tokens",
+      "fieldPath": "fcm_token",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    }
+  ]
+}

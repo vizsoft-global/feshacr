@@ -1,0 +1,10 @@
+{
+  "name": "Feshah",
+  "short_name": "Feshah",
+  "description": "Feshah",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f1f4f8",
+  "theme_color": "#f1f4f8"
+}

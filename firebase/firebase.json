@@ -1,0 +1,37 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "database": [
+    {
+      "target": "hp-eu",
+      "rules": "database.rules.json"
+    },
+    {
+      "target": "hp-asia",
+      "rules": "database.rules.json"
+    },
+    {
+      "target": "hp-us",
+      "rules": "database.rules.json"
+    }
+  ],
+  "functions": [
+    {
+      "source": "custom_cloud_functions",
+      "codebase": "custom_cloud_functions"
+    },
+    {
+      "source": "functions",
+      "codebase": "functions"
+    }
+  ],
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

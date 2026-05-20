@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "hot_potato": {
+      "$roomId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+
+        "positions": {
+          "$encodedPath": {
+            ".validate": "newData.hasChildren(['x','y','vx','vy']) && newData.child('x').isNumber() && newData.child('y').isNumber() && newData.child('vx').isNumber() && newData.child('vy').isNumber()"
+          }
+        },
+
+        "pass_state": {
+        }
+      }
+    }
+  }
+}

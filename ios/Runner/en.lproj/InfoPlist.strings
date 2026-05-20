@@ -1,0 +1,4 @@
+NSCameraUsageDescription = "This app requires camera access for QR code scanning.";
+NSPhotoLibraryUsageDescription = "This app needs image library access to select QR code images";
+NSMicrophoneUsageDescription = "Microphone is used for in-game voice chat with other players and for QR scanning.";
+PermissionGroupNotification = "Get new notification to keep in loop";

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>761026372518-rbrtlo1agnq1c7hh7sptvuga9cjn08h7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.761026372518-rbrtlo1agnq1c7hh7sptvuga9cjn08h7</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>761026372518-jmotfqs4b0ve5lpfd0ltpt5eik0vril4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDnWtKSJOyD64-QeIGGkKfqFeH-lCoAVVU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>761026372518</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.feshah.app</string>
+	<key>PROJECT_ID</key>
+	<string>feshah-thbit</string>
+	<key>STORAGE_BUCKET</key>
+	<string>feshah-thbit.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:761026372518:ios:49a485e0e2bd214e60a567</string>
+</dict>
+</plist>

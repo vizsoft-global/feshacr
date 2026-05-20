@@ -1,0 +1,128 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Hot Potato rematch (see `hot_potato_rematch.dart`) ---
+    // Only the room creator may set or change `hot_potato_rematch_room_ref` so
+    // random signed-in users cannot repoint everyone to an arbitrary room.
+    function hotPotatoRematchRef(data) {
+      return ('hot_potato_rematch_room_ref' in data)
+        ? data.hot_potato_rematch_room_ref
+        : null;
+    }
+
+    function roomCreatorOrUnset() {
+      return !('room_created_userRef' in resource.data)
+        || resource.data.room_created_userRef
+             == /databases/$(database)/documents/users/$(request.auth.uid);
+    }
+
+    function hotPotatoRematchPointerUnchangedOrByCreator() {
+      return hotPotatoRematchRef(request.resource.data)
+             == hotPotatoRematchRef(resource.data)
+        || roomCreatorOrUnset();
+    }
+
+    match /users/{document} {
+      allow create: if request.auth.uid == document;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth.uid == document;
+    }
+
+    match /IDmap/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /room/{document} {
+      // Require auth to create rooms (was `true`, which allowed unauthenticated spam).
+      allow create: if request.auth != null;
+      allow read: if true;
+      // Hot Potato writes `hot_potato_live`, `hot_potato_settings`, etc. from many
+      // participants; only rematch routing is restricted to the room creator.
+      allow update: if request.auth != null
+        && hotPotatoRematchPointerUnchangedOrByCreator();
+      allow delete: if request.auth != null;
+    }
+
+    match /point/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /order/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /settings/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /payment_response/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth != null;
+    }
+
+    match /game/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /game_history/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /notification/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /wallet_spent/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /topic/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /topic_question/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /coupon/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+  }
+}

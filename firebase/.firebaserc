@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "feshah-thbit"
+  },
+  "targets": {
+    "feshah-thbit": {
+      "database": {
+        "hp-eu": [
+          "feshah-thbit-default-rtdb"
+        ],
+        "hp-asia": [
+          "feshah-thbit"
+        ],
+        "hp-us": [
+          "feshah-thbit-127db"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

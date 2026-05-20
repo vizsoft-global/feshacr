@@ -1,0 +1,23 @@
+name = "hot-potato-room"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+[[durable_objects.bindings]]
+name = "HOT_POTATO_ROOM"
+class_name = "HotPotatoRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["HotPotatoRoom"]
+
+# Set via: wrangler secret put HOT_POTATO_JWT_SECRET
+# Must match Firebase functions config hot_potato.jwt_secret (callable getHotPotatoEdgeToken).
+#
+# If the browser shows WebSocket handshake 500/503, open GET /health on this worker:
+#   { "jwtSecretConfigured": false }  →  set the secret above and redeploy is not needed for secrets.
+#
+# WebSocket URL: wss://<worker>/room/<roomId>?token=<JWT>
